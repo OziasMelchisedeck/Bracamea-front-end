@@ -6,7 +6,7 @@ import { Observable, Subject, tap } from 'rxjs';
   providedIn: 'root',
 })
 export class Articles {
-  private apiUrl = 'http://localhost:3000/articles';
+  private apiUrl = 'https://bracamea-backend.onrender.com/articles';
 
   constructor(private http: HttpClient) {}
 

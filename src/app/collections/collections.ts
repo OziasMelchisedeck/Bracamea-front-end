@@ -13,7 +13,7 @@ export class Collections implements OnInit{
     public articlesService: Articles
   ) {}
 
-  url ="http://localhost:3000/public/";
+  url ="https://bracamea-backend.onrender.com/public/";
   filters:string[] = [];
   articles:any[] = [];
   ngOnInit(): void {
