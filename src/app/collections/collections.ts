@@ -54,4 +54,7 @@ export class Collections implements OnInit{
     });
   console.log(this.articles);
   }
+  ajoutPanier(article:any){
+    this.articlesService.panierArticles.push(article);
+  }
 }

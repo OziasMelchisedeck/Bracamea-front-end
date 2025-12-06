@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Articles } from '../articles';
 
 @Component({
   selector: 'app-header',
@@ -8,8 +9,11 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './header.scss',
 })
 export class Header implements OnInit{
-  constructor() {}
-
+  constructor(
+    private articlesService: Articles
+  ) {}
+  itemCount: number = 0;
   ngOnInit(): void {
+    this.itemCount= this.articlesService.panierArticles.length;
   }
 }

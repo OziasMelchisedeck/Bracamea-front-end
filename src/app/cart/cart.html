@@ -1,0 +1,24 @@
+<section class="d-flex flex-column">
+    <div class="header my-3 p-2">
+        <span (click)="goToCollections()" class="title h6">collection </span>
+        <span> / panier</span>
+    </div>
+    <span class="title m-2 h3">Panier</span>
+    <div class="d-flex flex-column align-items-center">
+        <div *ngFor="let article of articlesService.panierArticles" class="article d-flex flex-column m-2 p-2">
+            <img [src]="sanitizeUrl(url + article.path)" alt="Article Image" class="article-image mb-2"/>
+            <div class="d-flex flex-column justify-content-center ml-2">
+                <span class="article-price mt-1">{{article.prix}} FCFA</span>
+                <button  (click)="removeFromCart(article)" class="remove-cart d-flex align-items-center">Retirer du panier 
+                    <svg heigth="15" width="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M19 7L5 21M5 7L19 21" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="commande flex-column d-flex align-items-center mt-4 p-2">
+        <span class="h5"><span class="title">Total:</span> {{ getTotalPrice() }} FCFA</span>
+        <button class="btn-commander btn btn-success mt-2 p-2">
+            <a href="https://wa.me/message/KWJRTFDO2NXIE1">Commander sur whatsapp</a>
+        </button>
+    </div>
+</section>

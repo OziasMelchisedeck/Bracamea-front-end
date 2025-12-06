@@ -12,7 +12,8 @@ export class Articles {
 
   articles$ = new Subject<any[]>(); 
   articlesList = this.articles$.asObservable();
-allArticles: any[] = [];
+  allArticles: any[] = [];
+  panierArticles: any[] = [];
 
 
   currentFilters: string[] = [];
