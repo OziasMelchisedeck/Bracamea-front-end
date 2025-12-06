@@ -1,0 +1,109 @@
+<section class="d-flex flex-column px-2 section1">
+    <div class="header my-3 p-2">
+        <span routerLink="" class="title h6">Home </span>
+        <span> / Configuration</span>
+    </div>
+    <div class="config d-flex border rounded mx-2 p-2">
+        <div class="filter-active d-flex flex-column col-3">
+            <h6>Filtres actifs</h6>
+            <span *ngFor="let filter of filters">{{filter}}</span>
+        </div>
+        <div class="all-filter col-9 d-flex flex-column">
+            <h6 class="text-center">Tous les filtres</h6>
+            <span class="genre-title mt-2 text-center">Genres</span>
+            <div class="genres d-flex my-2 justify-content-evenly">
+                <span (click)="addfilter('homme')" class="d-flex flex-column btn justify-content-center align-items-center">
+                    <img src="article (28).jpg"/>
+                    <span>Homme</span>
+                </span>
+                <span (click)="addfilter('femme')" class="d-flex flex-column btn justify-content-center align-items-center">
+                    <img src="article (33).jpg"/>
+                    <span>Femme</span>
+                </span>
+            </div>
+
+            <span class="genre-title mt-2 text-center">Catégories</span>
+            <div class="genres d-flex flex-wrap my-2 justify-content-evenly">
+                <span (click)="addfilter('robe')" class="d-flex flex-column btn justify-content-center align-items-center">
+                    <img src="article (19).jpg"/>
+                    <span>Robe</span>
+                </span>
+                <span (click)="addfilter('jupe')" class="d-flex flex-column btn justify-content-center align-items-center">
+                    <img src="article (43).jpg"/>
+                    <span>Jupe</span>
+                </span>
+                <span (click)="addfilter('ensemble homme')" class="d-flex flex-column btn justify-content-center align-items-center">
+                    <img src="article (28).jpg"/>
+                    <span>Ensemble Homme</span>
+                </span>
+               <span (click)="addfilter('chemise')" class="d-flex flex-column btn justify-content-center align-items-center">
+                    <img src="article (204).jpg"/>
+                    <span>chemise</span>
+                </span>
+                <span (click)="addfilter('sac a main')" class="d-flex flex-column btn justify-content-center align-items-center">
+                    <img src="article (63).jpg"/>
+                    <span>Sac a main</span>
+                </span>
+                <span (click)="addfilter('parfums')" class="d-flex flex-column btn justify-content-center align-items-center">
+                    <img src="article (196).jpg"/>
+                    <span>Parfums</span>
+                </span>
+                <span (click)="addfilter('babouches')" class="d-flex flex-column btn justify-content-center align-items-center">
+                    <img src="article (124).jpg"/>
+                    <span>Babouches</span>
+                </span>
+                <span (click)="addfilter('chaussures')" class="d-flex flex-column btn justify-content-center align-items-center">
+                    <img src="article (174).jpg"/>
+                    <span>Chaussuress</span>
+                </span>
+            </div>
+
+            <span class="genre-title mt-2 text-center">Modèles</span>
+            <div class="genres flex-wrap d-flex my-2 justify-content-evenly">
+                <button (click)="addfilter('africain')" class="btn-simple">Européen</button>
+                <button (click)="addfilter('europeen')" class="btn-simple">Africain</button>
+                <button (click)="addfilter('zara')" class="btn-simple">Zara</button>
+                <button (click)="addfilter('pomonana')" class="btn-simple">Pomonana</button>
+                <button (click)="addfilter('glamor')" class="btn-simple">Glamor</button>
+                <button (click)="addfilter('mocassin')" class="btn-simple">Mocassin</button>
+                <button (click)="addfilter('paires')" class="btn-simple">Paires</button>
+                <button (click)="addfilter('sport')" class="btn-simple">Sport</button>
+            </div>
+
+            <span class="genre-title mt-2 text-center">Tailles</span>
+            <div class="flex-wrap d-flex my-2 justify-content-evenly">
+                <button (click)="addfilter('S')" class="btn-spec">S</button>
+                <button (click)="addfilter('M')" class="btn-spec">M</button>
+                <button (click)="addfilter('L')" class="btn-spec">L</button>
+                <button (click)="addfilter('XL')" class="btn-spec">XL</button>
+                <button (click)="addfilter('XXL')" class="btn-spec">XXL</button>
+            </div>
+
+            <span class="genre-title mt-2 text-center">Pointures</span>
+            <div class="genres flex-wrap d-flex my-2 justify-content-evenly">
+                <button (click)="addfilter('38')" class="btn-spec">38</button>
+                <button (click)="addfilter('39')" class="btn-spec">39</button>
+                <button (click)="addfilter('40')" class="btn-spec">40</button>
+                <button (click)="addfilter('41')" class="btn-spec">41</button>
+                <button (click)="addfilter('42')" class="btn-spec">42</button>
+                <button (click)="addfilter('43')" class="btn-spec">43</button>
+                <button (click)="addfilter('44')" class="btn-spec">44</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="d-flex flex-column">
+    <span class="title m-2">Collections</span>
+    <div class="d-flex">
+        <div class="collection d-flex flex-wrap justify-content-evenly">
+            <div *ngFor="let article of articlesService.articlesList | async" class="article d-flex flex-column m-2 p-2">
+                <img [src]="sanitizeUrl(url + article.path)" alt="Article Image" class="article-image mb-2"/>
+                <span class="article-price mt-1">{{article.prix}} FCFA</span>
+                <button class="add-cart">Ajouter au panier 
+                    <svg heigth="20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

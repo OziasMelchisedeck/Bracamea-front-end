@@ -1,0 +1,88 @@
+@use "../../styles.scss" as *;
+@use '../../styles.scss' as *;
+
+.section1 {
+    min-height: 92.5vh;
+    height: 100%;
+    margin-top: 3rem;
+    font-size: small;
+    .title{
+        color: rgba(255, 102, 0);
+        cursor: pointer;
+    }
+    .header{
+        border-radius: 0.2rem;
+        background-color: rgba(255, 102, 0, 0.2);
+    }
+    .btn{
+        img{
+            border-radius: 50%;
+            height: 3rem;
+            width: 3rem;
+        }
+        span{font-size: small; font-weight: 500;}
+    }
+    .btn-simple{
+        border: none;
+        font-size: small;
+        padding: 0.5rem;
+        border-radius: 0.2rem;
+        background-color: rgba($primary-color, 0.9);
+        color: white;
+        font-weight: 500;
+    }
+    .btn-spec{
+        border-radius: 50%;
+        width: 2rem;
+        height: 2rem;
+        border: none;
+    }
+    .btn-spec:hover{
+        background-color: white;
+        color: $primary_color;
+    }
+    .all-filter{
+        background-color: rgba(255, 102, 0, 0.107);
+        padding: 0.5rem;
+        .genre-title{
+            font-weight: 500;
+        }
+        .genres{
+            background-color: white;
+            padding: 0.5rem;
+        }
+    }
+    .filter-active{
+        background-color:rgb(237, 218, 218);
+        padding: 0.5rem;
+    }
+}
+
+section {
+    min-height: 92.5vh;
+    height: 100%;
+    margin-top: 3rem;
+    .article-image{
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 0.5rem;
+    }
+    .article-price{
+        font-weight: 500;
+        font-size: small;
+    }
+    .add-cart{
+        border: none;
+        background-color: rgba($primary-color, 0.9);
+        color: white;
+        font-size: small;
+        font-weight: 500;
+        border-radius: 0.2rem;
+    }
+    .add-cart:hover{
+        background-color: white;
+        color: $primary-color;
+        border: 1px solid $primary-color;
+    }
+}

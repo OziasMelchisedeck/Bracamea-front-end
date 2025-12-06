@@ -1,0 +1,90 @@
+@use '../../styles.scss' as *;
+section {
+    background: linear-gradient(rgba(255, 102, 0, 0.6), rgba(0, 0, 0, 0.8));
+    min-height: 92.5vh;
+    height: 100%;
+    margin-top: 3rem;
+    .title{
+        color: $primary-color;
+    }
+    p{
+        font-size: small;
+    }
+    .fin{
+        font-style: italic;
+        font-size: bold;
+    }
+
+    .presentation{
+        height: 100%;
+        min-height: 84vh;  
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+    .carte-container{
+        background-color: rgba(255, 102, 0, 0.107);
+    }
+    .carte{
+        box-shadow: 2px 2px 2px silver;
+        border-radius: 0.2rem;
+        background-color: white;
+    }
+    .title{
+        font-weight: 500;
+    }
+    .btn1{
+        font-size: small;
+        font-weight: 500;
+        border: none;
+        background-color: rgba(255, 102, 0, 0.8);
+        border-radius: 0.2rem;
+        color: white;
+    }
+    .btn2{
+        font-size: small;
+        font-weight: 500;
+        border: none;
+        background-color:rgb(237, 218, 218);
+        border-radius: 0.2rem;
+        color: rgb(255, 102, 0);
+    }
+    .btn1:hover{
+        background-color: rgb(255, 102, 0);
+    }
+    .btn2:hover{
+        background-color: white;
+    }
+    .bg{
+    background-image: url('../../../public/article\ \(33\).jpg');
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    }
+        .bgd {
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+
+    /* Fond initial */
+    background-image: url('../../../public/article\ \(33\).jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Animation */
+    animation: slideShow 20s infinite;
+    }
+
+    @keyframes slideShow {
+    0%   { background-image: url('../../../public/article\ \(33\).jpg'); }
+    33%  { background-image: url('../../../public/article\ \(1\).jpg'); }
+    66%  { background-image: url('../../../public/article\ \(2\).jpg'); }
+    100% { background-image: url('../../../public/article\ \(19\).jpg'); }
+    }
+
+}
