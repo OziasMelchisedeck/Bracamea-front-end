@@ -15,12 +15,18 @@ export class Cart implements  OnInit{
     private router: Router
   ) {}
 
+  panierArticles!: any[];
   ngOnInit(): void {
-    console.log(this.articlesService.panierArticles);
-    
+    this.load();
   }
-  url ="https://bracamea-backend.onrender.com/public/";
+  urlDep ="https://bracamea-backend.onrender.com/public/";
+  url ="http://localhost:3000/public/";
 
+  load(){
+    this.articlesService.panierArticles.subscribe(articles => {
+      this.panierArticles = articles;
+    });
+  }
   sanitizeUrl(url: string) {
   return encodeURI(url);
   }
@@ -29,16 +35,10 @@ export class Cart implements  OnInit{
   }
 
   removeFromCart(article:any){
-    const index = this.articlesService.panierArticles.indexOf(article);
-    if (index > -1) {
-      this.articlesService.panierArticles.splice(index, 1);
-    }
+    this.articlesService.removePanier(article);
+    this.load();
   }
   getTotalPrice(): number {
-    let total = 0;  
-    for (let article of this.articlesService.panierArticles) {
-      total += article.prix; 
-    }
-    return total;
+    return this.panierArticles.reduce((total, article) => total + article.prix, 0);
   }    
 } 

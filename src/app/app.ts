@@ -13,10 +13,9 @@ export class App implements OnInit{
   constructor(private articlesServices: Articles) {}
   ngOnInit(): void {
     // Initialization logic can go here
+   if(!this.articlesServices.loading){
     this.articlesServices.getArticles().subscribe();
-    this.articlesServices.articlesList.subscribe((data:any) => {
-      this.articlesServices.allArticles = data;
-    });
+   }
   }
   protected readonly title = signal('bracamea-frontend');
 }

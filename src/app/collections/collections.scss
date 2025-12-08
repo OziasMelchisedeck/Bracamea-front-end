@@ -55,6 +55,14 @@
     .filter-active{
         background-color:rgb(237, 218, 218);
         padding: 0.5rem;
+        .remove{
+            cursor: pointer;
+            background-color: white;
+            font-size: small;
+            font-weight: 500;
+            padding: 0.2rem;
+            border-radius: 0.2rem;
+        }
     }
 }
 

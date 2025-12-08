@@ -14,6 +14,8 @@ export class Header implements OnInit{
   ) {}
   itemCount: number = 0;
   ngOnInit(): void {
-    this.itemCount= this.articlesService.panierArticles.length;
+    this.articlesService.panierArticles.subscribe(articles => {
+      this.itemCount = articles.length;
+    });
   }
 }

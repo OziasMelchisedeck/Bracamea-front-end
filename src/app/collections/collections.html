@@ -1,12 +1,12 @@
 <section class="d-flex flex-column px-2 section1">
     <div class="header my-3 p-2">
-        <span routerLink="" class="title h6">Home </span>
-        <span> / Configuration</span>
+        <a routerLink="" class="title h6">Home </a>
+        <span> / Collections</span>
     </div>
     <div class="config d-flex border rounded mx-2 p-2">
         <div class="filter-active d-flex flex-column col-3">
             <h6>Filtres actifs</h6>
-            <span *ngFor="let filter of filters">{{filter}}</span>
+            <span class="remove m-1 text-center" (click)="removefilter(filter)" *ngFor="let filter of filters">{{filter}}</span>
         </div>
         <div class="all-filter col-9 d-flex flex-column">
             <h6 class="text-center">Tous les filtres</h6>
@@ -32,7 +32,7 @@
                     <img src="article (43).jpg"/>
                     <span>Jupe</span>
                 </span>
-                <span (click)="addfilter('ensemble homme')" class="d-flex flex-column btn justify-content-center align-items-center">
+                <span (click)="addfilter('ensemble')" class="d-flex flex-column btn justify-content-center align-items-center">
                     <img src="article (28).jpg"/>
                     <span>Ensemble Homme</span>
                 </span>
@@ -44,15 +44,15 @@
                     <img src="article (63).jpg"/>
                     <span>Sac a main</span>
                 </span>
-                <span (click)="addfilter('parfums')" class="d-flex flex-column btn justify-content-center align-items-center">
+                <span (click)="addfilter('parfum')" class="d-flex flex-column btn justify-content-center align-items-center">
                     <img src="article (196).jpg"/>
                     <span>Parfums</span>
                 </span>
-                <span (click)="addfilter('babouches')" class="d-flex flex-column btn justify-content-center align-items-center">
+                <span (click)="addfilter('babouche')" class="d-flex flex-column btn justify-content-center align-items-center">
                     <img src="article (124).jpg"/>
                     <span>Babouches</span>
                 </span>
-                <span (click)="addfilter('chaussures')" class="d-flex flex-column btn justify-content-center align-items-center">
+                <span (click)="addfilter('chaussure')" class="d-flex flex-column btn justify-content-center align-items-center">
                     <img src="article (174).jpg"/>
                     <span>Chaussuress</span>
                 </span>
@@ -60,14 +60,14 @@
 
             <span class="genre-title mt-2 text-center">Modèles</span>
             <div class="genres flex-wrap d-flex my-2 justify-content-evenly">
-                <button (click)="addfilter('africain')" class="btn-simple">Européen</button>
-                <button (click)="addfilter('europeen')" class="btn-simple">Africain</button>
-                <button (click)="addfilter('zara')" class="btn-simple">Zara</button>
-                <button (click)="addfilter('pomonana')" class="btn-simple">Pomonana</button>
-                <button (click)="addfilter('glamor')" class="btn-simple">Glamor</button>
-                <button (click)="addfilter('mocassin')" class="btn-simple">Mocassin</button>
-                <button (click)="addfilter('paires')" class="btn-simple">Paires</button>
-                <button (click)="addfilter('sport')" class="btn-simple">Sport</button>
+                <button (click)="addfilter('europeen')" class="btn-simple m-1">Européen</button>
+                <button (click)="addfilter('africain')" class="btn-simple m-1">Africain</button>
+                <button (click)="addfilter('zara')" class="btn-simple m-1">Zara</button>
+                <button (click)="addfilter('pomonana')" class="btn-simple m-1">Pomonana</button>
+                <button (click)="addfilter('glamor')" class="btn-simple m-1">Glamor</button>
+                <button (click)="addfilter('mocassin')" class="btn-simple m-1">Mocassin</button>
+                <button (click)="addfilter('paires')" class="btn-simple m-1">Paires</button>
+                <button (click)="addfilter('sport')" class="btn-simple m-1">Sport</button>
             </div>
 
             <span class="genre-title mt-2 text-center">Tailles</span>
@@ -97,7 +97,7 @@
     <span class="title m-2">Collections</span>
     <div class="d-flex">
         <div class="collection d-flex flex-wrap justify-content-evenly">
-            <div *ngFor="let article of articlesService.articlesList | async" class="article d-flex flex-column m-2 p-2">
+            <div *ngFor="let article of articles" class="article d-flex flex-column m-2 p-2">
                 <img [src]="sanitizeUrl(url + article.path)" alt="Article Image" class="article-image mb-2"/>
                 <span class="article-price mt-1">{{article.prix}} FCFA</span>
                 <button (click)="ajoutPanier(article)" class="add-cart">Ajouter au panier 
