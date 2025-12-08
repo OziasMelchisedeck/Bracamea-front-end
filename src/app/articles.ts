@@ -6,8 +6,8 @@ import { BehaviorSubject, Observable, Subject, tap } from 'rxjs';
   providedIn: 'root',
 })
 export class Articles {
-  private apiUrlDev = 'https://bracamea-backend.onrender.com/articles';
-  private apiUrl = 'http://localhost:3000/articles/';
+  private apiUrl = 'https://bracamea-backend.onrender.com/articles';
+  private apiUrlTest = 'http://localhost:3000/articles/';
 
   constructor(private http: HttpClient) {}
 

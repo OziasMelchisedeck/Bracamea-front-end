@@ -15,8 +15,8 @@ export class Collections implements OnInit{
     public articlesService: Articles
   ) {}
 
-  urlDev ="https://bracamea-backend.onrender.com/public/";
-  url = "http://localhost:3000/public/";
+  url ="https://bracamea-backend.onrender.com/public/";
+  urlTest = "http://localhost:3000/public/";
   filters:string[] = [];
   articles!: any[];
   ngOnInit(): void {

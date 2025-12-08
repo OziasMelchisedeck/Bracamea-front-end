@@ -19,8 +19,8 @@ export class Cart implements  OnInit{
   ngOnInit(): void {
     this.load();
   }
-  urlDep ="https://bracamea-backend.onrender.com/public/";
-  url ="http://localhost:3000/public/";
+  url ="https://bracamea-backend.onrender.com/public/";
+  urlTest ="http://localhost:3000/public/";
 
   load(){
     this.articlesService.panierArticles.subscribe(articles => {
